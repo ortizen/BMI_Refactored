@@ -1,6 +1,6 @@
 # bmi_refactored
 
-AppBrewery Project with State Management
+AppBrewery Project with State Management using the Provider package
 
 ## Getting Started
 
