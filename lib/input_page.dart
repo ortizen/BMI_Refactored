@@ -5,6 +5,7 @@ import 'constants.dart';
 import 'reusable_card.dart';
 import 'icon_child.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'toogle.dart';
 
 class InputPage extends StatelessWidget {
   @override
@@ -92,6 +93,40 @@ class InputPage extends StatelessWidget {
                 )
               ],
             ),
+          ),
+          Expanded(
+            child: Row(
+              children: <Widget>[
+                Expanded(
+                  child: ReusableCard(
+                    color: kCardColor,
+                    child: Toogle(
+                      substract: bmi.decrementWeigth,
+                      number: bmi.getWeight(),
+                      text: 'WEIGHT',
+                      add: bmi.incrementWeigth,
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: ReusableCard(
+                    color: kCardColor,
+                    child: Toogle(
+                      add: bmi.incrementAge,
+                      substract: bmi.decrementAge,
+                      number: bmi.getAge(),
+                      text: 'AGE',
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            color: Color(0xFFB75FF7),
+            margin: EdgeInsets.only(top: 10.0),
+            width: double.infinity,
+            height: 80.0,
           ),
         ],
       )),

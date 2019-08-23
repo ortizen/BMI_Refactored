@@ -38,6 +38,16 @@ class BMI with ChangeNotifier {
     this._age = age;
   }
 
+  void incrementWeigth() {
+    this._weight++;
+    notifyListeners();
+  }
+
+  void decrementWeigth() {
+    this._weight--;
+    notifyListeners();
+  }
+
   void setSex(Gender sex) {
     this._sex = sex;
     notifyListeners();
