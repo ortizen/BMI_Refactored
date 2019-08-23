@@ -1,18 +1,19 @@
-import 'constants.dart';
 import 'package:flutter/material.dart';
-import 'package:meta/meta.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:meta/meta.dart';
 
-class Toogle extends StatelessWidget {
+import 'constants.dart';
+
+class UpDown extends StatelessWidget {
   final int number;
   final String text;
   final Function add;
-  final Function substract;
-  Toogle(
+  final Function sustract;
+  UpDown(
       {@required this.number,
       @required this.text,
       @required this.add,
-      @required this.substract});
+      @required this.sustract});
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +42,7 @@ class Toogle extends StatelessWidget {
             ),
             CustButton(
               icon: FontAwesomeIcons.minus,
-              fun: substract,
+              fun: sustract,
             )
           ],
         )
