@@ -27,6 +27,7 @@ class BMI with ChangeNotifier {
 
   void setHeight(int height) {
     this._height = height;
+    notifyListeners();
   }
 
   void setWeight(int weight) {
