@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'constants.dart';
-import 'package:provider/provider.dart';
 
 class BMI with ChangeNotifier {
   int _height;
