@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
+
 import 'bmi.dart';
 import 'constants.dart';
-import 'reusable_card.dart';
 import 'icon_child.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'toogle.dart';
+import 'reusable_card.dart';
+import 'up_down.dart';
 
 class InputPage extends StatelessWidget {
   @override
@@ -100,8 +101,8 @@ class InputPage extends StatelessWidget {
                 Expanded(
                   child: ReusableCard(
                     color: kCardColor,
-                    child: Toogle(
-                      substract: bmi.decrementWeigth,
+                    child: UpDown(
+                      subtract: bmi.decrementWeigth,
                       number: bmi.getWeight(),
                       text: 'WEIGHT',
                       add: bmi.incrementWeigth,
@@ -111,9 +112,9 @@ class InputPage extends StatelessWidget {
                 Expanded(
                   child: ReusableCard(
                     color: kCardColor,
-                    child: Toogle(
+                    child: UpDown(
                       add: bmi.incrementAge,
-                      substract: bmi.decrementAge,
+                      subtract: bmi.decrementAge,
                       number: bmi.getAge(),
                       text: 'AGE',
                     ),

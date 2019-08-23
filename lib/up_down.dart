@@ -8,12 +8,12 @@ class UpDown extends StatelessWidget {
   final int number;
   final String text;
   final Function add;
-  final Function sustract;
+  final Function subtract;
   UpDown(
       {@required this.number,
       @required this.text,
       @required this.add,
-      @required this.sustract});
+      @required this.subtract});
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +42,7 @@ class UpDown extends StatelessWidget {
             ),
             CustButton(
               icon: FontAwesomeIcons.minus,
-              fun: sustract,
+              fun: subtract,
             )
           ],
         )
