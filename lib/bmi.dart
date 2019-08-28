@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'constants.dart';
+import 'dart:math';
 
 class BMI with ChangeNotifier {
   int _height;
@@ -61,5 +62,34 @@ class BMI with ChangeNotifier {
   void decrementAge() {
     _age--;
     notifyListeners();
+  }
+
+  double calculateBMI() {
+    double bmi = _weight / pow(_height / 100, 2);
+    return bmi;
+  }
+
+  String getResult(double bmi) {
+    if (bmi >= 25.0) {
+      return 'Overweigth';
+    } else {
+      if (bmi >= 18.5) {
+        return 'Normal';
+      } else {
+        return 'Underweigth';
+      }
+    }
+  }
+
+  String getFeeback(double bmi) {
+    if (bmi >= 25.0) {
+      return 'You have a higher than normal body weight. Try to excercise more.';
+    } else {
+      if (bmi >= 18.5) {
+        return 'You have a normal body weight, good job!';
+      } else {
+        return 'You have a lower than normal body weight, you can eat a bit more.';
+      }
+    }
   }
 }

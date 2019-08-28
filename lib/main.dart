@@ -12,6 +12,7 @@ class BMICalculator extends StatelessWidget {
     return ChangeNotifierProvider<BMI>(
       builder: (context) => BMI(181, 60, 25, Gender.male),
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primaryColor: Color(0XFF1E205F),
           scaffoldBackgroundColor: Color(0XFF13134E),

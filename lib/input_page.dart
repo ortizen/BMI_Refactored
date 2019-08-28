@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
-
+import 'big_button.dart';
 import 'bmi.dart';
 import 'constants.dart';
 import 'icon_child.dart';
 import 'reusable_card.dart';
 import 'up_down.dart';
+import 'results_page.dart';
 
 class InputPage extends StatelessWidget {
   @override
@@ -123,12 +124,19 @@ class InputPage extends StatelessWidget {
               ],
             ),
           ),
-          Container(
-            color: Color(0xFFB75FF7),
-            margin: EdgeInsets.only(top: 10.0),
-            width: double.infinity,
-            height: 80.0,
-          ),
+          new BigButton(
+              text: 'CALCULATE',
+              fun: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ResultsPage(
+                              bmi: bmi.calculateBMI(),
+                              result: bmi.getResult(bmi.calculateBMI()),
+                              interpretation:
+                                  bmi.getFeeback(bmi.calculateBMI()),
+                            )));
+              }),
         ],
       )),
     );
